@@ -17,7 +17,7 @@ const VotingApp = () => {
 
   useEffect(() => {
     // Initialize socket connection
-    socketRef.current = io('http://localhost:3000', {
+    socketRef.current = io('http://vote.benitoquintero.com', {
       transports: ['websocket'],
       autoConnect: true
     });
