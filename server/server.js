@@ -9,8 +9,9 @@ app.use(cors());
 
 const server = http.createServer(app);
 const io = new Server(server, {
+  path: "/socket.io",
   cors: {
-    origin: "http://vote.benitoquintero.com",
+    origin: "*",
     methods: ["GET", "POST"]
   }
 });
@@ -58,7 +59,7 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
